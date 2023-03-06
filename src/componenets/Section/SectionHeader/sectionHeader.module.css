@@ -21,4 +21,9 @@
     width: 44px;
     height: 44px;
     background: #FDADB4;
+    cursor: pointer;
+}
+.ellipse:hover{
+    background: #fcb6bd;
+    /*box-shadow: 1px 1px 1px 1px gray;*/
 }
