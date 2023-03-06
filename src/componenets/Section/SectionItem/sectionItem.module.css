@@ -1,0 +1,38 @@
+.wrapper{
+    width: 417.49px;
+    height: 65px;
+
+    background: rgba(251, 127, 137, 0.8);
+    border: 1px solid #F27C7C;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ED7375;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.text{
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #3a3a3a;
+
+    box-shadow: none;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 280px;
+    height: 23px;
+}
+
+.text:focus-visible{
+    outline: none;
+}

@@ -1,0 +1,21 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../../assets/img/bbg.png");
+    /*background-color: #FE8FA2;*/
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zag {
+    font-family: 'Buba';
+    font-weight: 500;
+    font-size: 120px;
+    color: #000000;
+    /*margin-top: 100px;*/
+}
