@@ -4,9 +4,9 @@ import plus from '../../../assets/svg/plus.svg';
 
 const SectionHeader = ({children, add = false, setAdd}) => {
     return (
-        <div className={style.wrapper} onClick={setAdd}>
+        <div className={style.wrapper}>
             <span className={style.header}>{children}</span>
-            {add && <div className={style.ellipse}>
+            {add && <div className={style.ellipse}  onClick={setAdd}>
                 <img className={style.plus} src={plus} alt=""/>
             </div>}
         </div>

@@ -3,14 +3,16 @@
     justify-content: center;
     align-items: center;
     background: url("../../assets/img/bbg.png");
+    background-size: cover;
     /*background-color: #FE8FA2;*/
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 .zag {
     font-family: 'Buba';

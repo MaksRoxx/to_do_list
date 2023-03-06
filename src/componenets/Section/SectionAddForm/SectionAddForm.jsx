@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import style from './sectionAddForm.module.css'
 
+
 const SectionAddForm = ({onClose, todos, setTodos}) => {
-    let todo = {check: false, todoText: ''};
+    let a = (Math.random() + 10) * 1000 / 2 * 8
+    let todo = {check: false, todoText: '', id: a};
 
     const [text, setText] = useState('')
 
@@ -10,6 +12,7 @@ const SectionAddForm = ({onClose, todos, setTodos}) => {
         if (text.length > 0) {
             todo.todoText = text
             setTodos([...todos, todo])
+            localStorage.setItem('todos', JSON.stringify([...todos, todo]))
             onClose(false)
         }
 

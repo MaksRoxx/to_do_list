@@ -7,22 +7,27 @@ import SectionAddForm from "./componenets/Section/SectionAddForm/SectionAddForm"
 import {useMemo, useState} from "react";
 
 function App() {
+    let initVal  =  JSON.parse(localStorage.getItem('todos')) ?? []
+    console.log(initVal)
     const [isAdd, setAdd] = useState(false)
-    const [todos, setTodos] = useState([])
-    let editTodo = {}
+    const [todos, setTodos] = useState(initVal)
 
     const onDelete = (value) => {
-        setTodos(todos.filter(item => item.todoText !== value))
+        setTodos(todos.filter(item => item.id !== value))
+        localStorage.setItem('todos', JSON.stringify(todos.filter(item => item.id !== value)))
     }
 
     const onEdit = (value) => {
-        const newTodos = todos.map((item) => item.todoText === value ? {...item, check: !item.check} : item)
+        const newTodos = todos.map((item) => item.id === value ? {...item, check: !item.check} : item)
         setTodos(newTodos)
+        localStorage.setItem('todos', JSON.stringify(newTodos))
+
     }
 
     let todosList = useMemo(() => todos.map((item, index) => item.check === false &&
             <SectionItem key={item.todoText + index}
                          check={item.check}
+                         id = {item.id}
                          onDelete={onDelete}
                          onEdit={onEdit}
                          isCheck
@@ -32,6 +37,7 @@ function App() {
     let doneList = useMemo(() => todos.map((item, index) => item.check === true &&
             <SectionItem key={item.todoText + index}
                          check={item.check}
+                         id = {item.id}
                          onDelete={onDelete}
                          text={item.todoText}/>)
         , [todos])
@@ -50,7 +56,7 @@ function App() {
 
             </Layout>
             {isAdd && <Modal>
-                <SectionAddForm onClose={setAdd} todos={todos} setTodos={setTodos}/>
+                <SectionAddForm onClose={setAdd} todos={initVal} setTodos={setTodos}/>
             </Modal>}
         </div>
     );
