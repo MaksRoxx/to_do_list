@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Buba';
-  src: url("./src/assets/fonts/BUBA_regular.ttf");
+  src: url("./assets/fonts/BUBA_regular.ttf");
 }
 * {
   font-family: Buba;
